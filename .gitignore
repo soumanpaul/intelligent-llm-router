@@ -42,7 +42,7 @@ env/
 *.onnx
 *.ckpt
 checkpoints/
-models/
+/models/
 outputs/
 runs/
 wandb/
