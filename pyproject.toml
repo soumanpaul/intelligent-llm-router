@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-router"
+version = "0.1.0"
+description = "Train and serve an intelligent LLM routing classifier"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.6.0",
+  "tensorboard",
+  "scikit-learn",
+  "datasets==3.1.0",
+  "accelerate==1.2.1",
+  "hf-transfer==0.1.8",
+  "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

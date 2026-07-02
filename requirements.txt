@@ -1,0 +1,8 @@
+torch>=2.6.0
+tensorboard
+scikit-learn
+datasets==3.1.0
+accelerate==1.2.1
+hf-transfer==0.1.8
+transformers @ git+https://github.com/huggingface/transformers.git@6e0515e99c39444caae39472ee1b2fd76ece32f1
+pyyaml

@@ -1,0 +1,30 @@
+project:
+  name: intelligent-llm-router
+  seed: 42
+
+data:
+  # Primary router dataset (swap from placeholder during experiments)
+  dataset_id: DevQuasar/llm_router_dataset-synth
+  placeholder_dataset_id: legacy-datasets/banking77
+  cache_dir: data/cache
+
+model:
+  base_model: answerdotai/ModernBERT-base
+  num_labels: null  # inferred from dataset at runtime
+  max_length: 512
+
+training:
+  output_dir: outputs/checkpoints
+  num_train_epochs: 3
+  per_device_train_batch_size: 16
+  per_device_eval_batch_size: 32
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  logging_dir: outputs/logs
+  eval_strategy: epoch
+  save_strategy: epoch
+  load_best_model_at_end: true
+
+inference:
+  checkpoint_dir: outputs/checkpoints/best
+  top_k: 1

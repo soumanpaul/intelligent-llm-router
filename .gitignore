@@ -47,6 +47,10 @@ outputs/
 runs/
 wandb/
 
+# Local datasets and processed artifacts
+data/*
+!data/.gitkeep
+
 # Hugging Face cache
 .cache/
 huggingface/
